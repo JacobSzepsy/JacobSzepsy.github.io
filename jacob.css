@@ -8,6 +8,10 @@
 	height: 100vh;
 }
 
+.link, .link:hover{
+	color: red;
+	text-decoration: none;
+}
 .align-center {
 	position: relative;
 	text-align: center;
@@ -21,7 +25,7 @@
 
 .black-card {
 	background-color: rgb(33, 35, 38);
-	height: 100vh;
+	height: 100%;
 }
 
 .nav-transparant {
@@ -30,4 +34,9 @@
 
 .nav-dark {
 	background-color: rgb(33, 35, 38);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
 }

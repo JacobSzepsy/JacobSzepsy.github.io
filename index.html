@@ -24,26 +24,56 @@
 				</li>
 			</ul>
 		</div>
-		
-	  </nav>
+	</nav>
 	<body data-spy="scroll" data-target="#navbar">
 		<div class="backgrounds" id="intro">
 			<div class="align-center text-white">
 				<h1>Hello! I'm Jacob Szepsy</h1>
 				<h5>software engineer and fullstack developer</h5>
 				<br/>
-				<a href="https://www.github.com/JacobSzepsy"><img class="mr-4" src="github.png" alt='github'/></a>
-				<a href="https://www.linkedin.com/in/jacob-s-1a50a617a/"><img src="linkedin.png" alt='linkedin'/></a>
+				<a target="_blank" href="https://www.github.com/JacobSzepsy"><img class="mr-4" src="github.png" alt='github'/></a>
+				<a target="_blank" href="https://www.linkedin.com/in/jacob-s-1a50a617a/"><img src="linkedin.png" alt='linkedin'/></a>
 			</div>	
 		</div>
 		<div class="white-card" style="height: 100vh" id="projects">
-			<h1 class="display-1 align-center">Projects Coming Soon.</h1>
+			<div class="align-center">
+				<h1 class="display-2">Projects Coming Soon.</h1>
+				<h1 class="display-4">For now visit my <a class="link" target="_blank" href="https://www.github.com/JacobSzepsy">github</a>!</h1>
+			</div>
 		</div>
 		<div class="black-card" id="about-me">
-			<h1 class="display-2 align-center text-white">About Me Coming Soon.</h1>
+			<div id="about-me-contents">
+				<h1 class="text-center display-3 text-white">About Me</h1>
+				<br>
+				<div class="container">
+					<div class="d-flex flex-row">
+						<img src="./profile.png" align="left" width="200" height="200" style="margin-right: 10%">
+						<div>
+							<h5 class="text-white" style="font-weight: normal">I am currently and undergrad student at New Jersey Institute of Technology with experience working with all aspects of the computer science field. From IT to software development to machine learning, I like to keep my interests varied and am always looking to build up my skillset! I am driven by my desire to push my abilities to the limit to see just how much I am capable of, hopefully picking up a few new skills along the way.</h5>
+							<h5 class="text-white" style="font-weight: normal">I am currently looking for work in the field of computer science, namely in software engineering or development. If you found my portfolio interesting feel free to contact me anywhere listed below!</h5>
+							<h4 class="text-white">Contact Me!</h4>
+							<h5 class="text-white" style="font-weight: normal">Email: JacobSzepsy@gmail.com</h5>
+						</div>
+					</div>
+				</div>	
+			</div>	
 		</div>
 		<div class="white-card" id="resume">
-			<h1 class="text-center display-3" style="padding-top:3%">Resume</h1>
+			<h1 class="text-center display-3">Resume</h1>
+			<div class="container" >
+				<div class="row" style="justify-content: center;">
+					<a download href="./JacobSzepsy-Resume.pdf">
+						<button class="btn btn-dark" onclick="background.jpg">
+							Download
+							<svg style="padding-left: 5%" class="bi bi-download" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd"/>
+								<path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
+								<path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/>
+							</svg>
+						</button>
+					</a>
+				</div>
+			</div>
 			<div style="padding-top: 2%">
 				<div class="container">
 					<div class="row">
@@ -111,6 +141,11 @@
 								<div class="progress-bar  bg-danger" role="progressbar" style="width: 50%"></div>
 							</div>
 							<br>
+							<h3>Deno</h3>
+							<div class="progress" style="height:25px">
+								<div class="progress-bar  bg-danger" role="progressbar" style="width: 40%"></div>
+							</div>
+							<br>
 							<h3>PHP</h3>
 							<div class="progress" style="height:25px">
 								<div class="progress-bar  bg-danger" role="progressbar" style="width: 85%"></div>
@@ -119,6 +154,11 @@
 							<h3>Ruby</h3>
 							<div class="progress" style="height:25px">
 								<div class="progress-bar  bg-danger" role="progressbar" style="width: 40%"></div>
+							</div>
+							<br>
+							<h3>JQuery</h3>
+							<div class="progress" style="height:25px">
+								<div class="progress-bar  bg-danger" role="progressbar" style="width: 52%"></div>
 							</div>
 						</div>
 					</div>	
@@ -130,7 +170,13 @@
 			console.log($('#projects').offset().top);
 			$(window).scroll(() => {
 				$('nav').toggleClass('nav-dark', $(this).scrollTop() > $('#projects').offset().top - $('nav').height());
-			})
+			});
+			$(".display-3").css("padding-top", $('nav').height() + 3);
+			
+			$(window).on("resize load", () => {
+				$("#about-me").css("height", $("#about-me-contents").height() + $('nav').height() + 3);
+			});
+				
 		</script>
 	</body>
 </html>
